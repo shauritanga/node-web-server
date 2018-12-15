@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
+const port = process.env.PORT || 3000;
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
@@ -9,7 +10,6 @@ app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
   res.render('test');
 });
-
 //MIDDLEWARE 3
 app.use((req, res, next) => {
   let now = new Date().toString();
@@ -36,6 +36,6 @@ app.get('/about', (req, res) => {
 
 
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000')
+app.listen(port, () => {
+  console.log(`Our app is running on port ${port}`);
 });
