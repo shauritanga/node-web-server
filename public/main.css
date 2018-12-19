@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    padding: 28px;
+    background: #556ef5;
+    color: white;
+}
+a {
+    text-decoration: none;
+    margin: 0 22px;
+    color: inherit;
+}

@@ -1,10 +1,12 @@
 const express = require('express');
+const path = require('path');
 const fs = require('fs');
 const app = express();
 
 const port = process.env.PORT || 3000;
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // MIDDLEWARE 2
 //MIDDLEWARE 3
