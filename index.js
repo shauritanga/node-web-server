@@ -23,6 +23,12 @@ app.get('/about', (req, res) => {
   })
 })
 
+app.get('/register', (req, res) => {
+  res.render('register', {
+    title: 'Sign Up'
+  })
+})
+
 
 
 

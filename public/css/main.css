@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.jtron {
+    margin-top: 1.4em;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+}
+#active {
+    color: darkgrey;
+}
+.size{
+    margin-top: 1.5em;
+    background-color: #ccc;
+    width: 50%;
+}
