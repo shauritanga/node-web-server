@@ -4,7 +4,7 @@ const region = document.querySelector('#region')
 // Object Of disstrics
 const districts = {
     arusha: ['Arumeru', 'Arusha', 'Karatu', 'Monduli', 'Ngorongoro'],
-    dar: ['Ilala', 'Temake', 'Kinondoni'],
+    dar: ['Ilala', 'Temake', 'Kigamboni', 'Kinondoni', 'Ubungo'],
     dodoma: ['Bahi', 'Chamwino', 'Chemba', 'Dodoma', 'Dodoma Rural', 'Kondoa', 'Kongwa', 'Mpwapwa'],
     iringa: ['Iringa Rural', 'Iringa Urban', 'Kilolo', 'Mafinga', 'Mufindi'],
     getai:[''],
