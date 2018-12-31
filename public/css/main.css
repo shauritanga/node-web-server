@@ -21,3 +21,6 @@
 .first::first-letter{
     font-size: 2em;
 }
+.footer{
+    color: #fff;
+}
