@@ -13,6 +13,7 @@ const districts = {
     kigoma:['Buhigwe', 'Kakonko', 'Kasulu', 'Kibondo'],
     mbeya: ['Chunya', 'kyela', 'Mbarali', 'Mbeya', 'Mbeya rural', 'Rungwe'],
     mara: ['Bunda', 'Butiama', 'Musoma Rural', 'Musoma Urban', 'Rorya', 'Serengeti', 'Tarime'],
+    mwanza: ['Ilemela', 'Kwimba', 'Magu', 'Misungwi', 'Nyamagana', 'Sengerema', 'Ukerewe' ],
     pwani: ['Bagamoyo', 'Kibaha', 'Kisarawe', 'Mafia', 'Mafia Island', 'Mkuranga', 'Rufiji'],
     rukwa: ['Kalambo', 'Nkasi', 'Sumbawanga', 'Sumbawanga Rural'],
     ruvuma: ['Mbinga', 'Namtumbo', 'Songea', 'Songea Rural', 'Tunduru'],
@@ -71,6 +72,13 @@ region.addEventListener('change', function(e) {
     if(this.value === 'Mara') {
         var str = "";
         for (var item of districts.mara) {
+          str += "<option>" + item + "</option>"
+        }
+        district.innerHTML = str;
+    }
+    if(this.value === 'Mwanza') {
+        var str = "";
+        for (var item of districts.mwanza) {
           str += "<option>" + item + "</option>"
         }
         district.innerHTML = str;
