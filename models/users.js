@@ -21,6 +21,10 @@ module.exports = mongoose.model('User', {
         type: String,
         required: true
     },
+    school: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
