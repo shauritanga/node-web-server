@@ -67,6 +67,13 @@ app.post('/register', async (req, res) => {
   }
 });
 
+app.get('/login', (req, res) => {
+  res.render('login', {
+    title: 'Login',
+    path: '/login'
+  });
+});
+
 
 
 
