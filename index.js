@@ -51,6 +51,7 @@ app.post('/register', async (req, res) => {
     lastName: req.body.lastName,
     subjects: req.body.subjects,
     region: req.body.region,
+    district: req.body.district,
     email: req.body.email
   });
   try{
