@@ -10,6 +10,7 @@ const districts = {
     getai:[''],
     kagera: ['Biharamulo', 'Bukoba Rural', 'Bukoba Urban', 'Karagwe', 'Kyerwa', 'Missenyi', 'Muleba', 'Ngara'],
     katavi: ['Mlele', 'Mpanda', 'Tanganyika'],
+    kigoma:['Buhigwe', 'Kakonko', 'Kasulu', 'Kibondo'],
     mbeya: ['Chunya', 'kyela', 'Mbarali', 'Mbeya', 'Mbeya rural', 'Rungwe'],
     pwani: ['Bagamoyo', 'Kibaha', 'Kisarawe', 'Mafia', 'Mafia Island', 'Mkuranga', 'Rufiji'],
     rukwa: ['Kalambo', 'Nkasi', 'Sumbawanga', 'Sumbawanga Rural'],
@@ -48,6 +49,13 @@ region.addEventListener('change', function(e) {
     if(this.value === 'Kagera') {
         var str = "";
         for (var item of districts.kagera) {
+          str += "<option>" + item + "</option>"
+        }
+        district.innerHTML = str;
+    }
+    if(this.value === 'Kigoma') {
+        var str = "";
+        for (var item of districts.kigoma) {
           str += "<option>" + item + "</option>"
         }
         district.innerHTML = str;
