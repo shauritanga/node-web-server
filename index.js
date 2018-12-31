@@ -8,6 +8,7 @@ const app = express();
 
 
 // Connecting to the database
+mongoose.set('useCreateIndex', true);
 mongoose.connect(db, {useNewUrlParser: true})
         .then(() => console.log('Connected!'))
         .catch(err => console.log(err));
