@@ -9,12 +9,15 @@
 .navbar-dark .navbar-nav .nav-link{
     color: #fff;
 }
-#active {
+.navbar-dark .navbar-nav .nav-link.active {
     color: darkgrey;
 }
 .size{
+    margin: 0 auto;
     margin-top: 1.5em;
     padding: 1em;
     background-color: #ccc;
-    width: 50%;
+}
+.first::first-letter{
+    font-size: 2em;
 }

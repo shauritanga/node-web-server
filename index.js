@@ -14,7 +14,7 @@ mongoose.connect(db, {useNewUrlParser: true})
         .catch(err => console.log(err));
 
 const port = process.env.PORT || 3000;
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -24,19 +24,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-  res.render('home', {title: 'Home'});
+  res.render('home', {
+    title: 'Home',
+    path: '/'
+  });
 });
 
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About Us'
+    title: 'About Us',
+    path: '/about'
   });
 });
 
 app.get('/register', (req, res) => {
   res.render('register', {
-    title: 'Sign Up'
+    title: 'Sign Up',
+    path: '/register'
   })
 });
 
