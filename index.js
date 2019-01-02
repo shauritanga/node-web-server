@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURL;
-const User = require('./models/users');
+
 const app = express();
 
 
@@ -47,24 +47,9 @@ app.get('/register', (req, res) => {
 
 app.post('/register', async (req, res) => {
   const user = new User({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    subjects: req.body.subjects,
-    region: req.body.region,
-    district: req.body.district,
-    school: req.body.schoolName,
-    email: req.body.email
+  
   });
-  try{
-      const result = await user.save();
-      if(!result) return err;
-      res.send(`<h4 style="background: teal, padding: 1em">Welcome, ${req.body.firstName} ${req.body.lastName}, you have successful registered. Login to contiue</h4>`);
-      res.end();
-  } catch (e) {
-    res.send(`<h4 style="background: teal, padding: 1em">there is a problem ${req.body.firstName}, try again!</h4>`);
-    res.end();
-
-  }
+ 
 });
 
 app.get('/login', (req, res) => {
@@ -74,8 +59,22 @@ app.get('/login', (req, res) => {
   });
 });
 
+// Routes to handle unknwon!
+app.use((req, res, next) => {
+  let err = new Error('File Not Found');
+  err.status = 404;
+  next(err);
+})
 
-
+// Error handler
+//define last callback
+app.use((req, res) => {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
 
 app.listen(port, () => {
   console.log(`Our app is running on port ${port}`);
