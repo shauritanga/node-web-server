@@ -9,6 +9,15 @@ module.exports = mongoose.model('User', {
         type: String,
         required: true
     },
+    identify: {
+        type: String,
+        required: true
+    },
+    idNumber: {
+        type: String,
+        required: true,
+        unique: true
+    },
     subjects: {
         type: [String],
         required: true

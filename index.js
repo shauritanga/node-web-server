@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const User = require('./models/users');
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURL;
 
@@ -47,9 +48,21 @@ app.get('/register', (req, res) => {
 
 app.post('/register', async (req, res) => {
   const user = new User({
-  
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      identify: req.body.identification,
+      idNumber: req.body.idNumber,
+      subjects: req.body.subjects,
+      region: req.body.region,
+      district: req.body.district,
+      school: req.body.schoolName,
+      email: req.body.email
   });
- 
+  user.save(function(err, user){
+    if (err) return err
+    res.send('<h1>You have successful registered!');
+    res.end();
+  });
 });
 
 app.get('/login', (req, res) => {
