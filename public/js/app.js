@@ -11,6 +11,7 @@ const districts = {
     kagera: ['Biharamulo', 'Bukoba Rural', 'Bukoba Urban', 'Karagwe', 'Kyerwa', 'Missenyi', 'Muleba', 'Ngara'],
     katavi: ['Mlele', 'Mpanda', 'Tanganyika'],
     kigoma:['Buhigwe', 'Kakonko', 'Kasulu', 'Kibondo'],
+    kilimanjaro: ['Hai', 'Moshi', 'Mwanga', 'Rombo', 'Same', 'Siha'],
     lindi: ['Kilwa', 'Lindi', 'Liwale', 'Nachingwea', 'Ruangwa'],
     mtwara: ['Masasi', 'Mtwara', 'Nanyumbu', 'Newela', 'Tandahimba'],
     manyara: ['Babati Rural', 'Babati Urban', 'Hanang', 'Kiteto', 'Mbulu', 'Simanjiro'],

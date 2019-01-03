@@ -24,3 +24,8 @@
 .footer{
     color: #fff;
 }
+.error{
+    padding: 1.5em;
+    text-align: center;
+    height: 80vh;
+}

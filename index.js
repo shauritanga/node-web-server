@@ -46,23 +46,47 @@ app.get('/register', (req, res) => {
   })
 });
 
-app.post('/register', async (req, res) => {
-  const user = new User({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      identify: req.body.identification,
-      idNumber: req.body.idNumber,
-      subjects: req.body.subjects,
-      region: req.body.region,
-      district: req.body.district,
-      school: req.body.schoolName,
-      email: req.body.email
+app.post('/register', async (req, res, next) => {
+  if(req.body.firstName &&
+    req.body.lastName &&
+    req.body.identification &&
+    req.body.idNumber &&
+    req.body.subjects &&
+    req.body.region &&
+    req.body.district &&
+    req.body.schoolName &&
+    req.body.email) {
+      
+
+     // creating user
+    const user = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        identify: req.body.identification,
+        idNumber: req.body.idNumber,
+        subjects: req.body.subjects,
+        region: req.body.region,
+        district: req.body.district,
+        school: req.body.schoolName,
+        email: req.body.email
   });
   user.save(function(err, user){
-    if (err) return err
-    res.send('<h1>You have successful registered!');
-    res.end();
+    if (err) {
+      const err = new Error('Data Not Submited, It seem that you have already registered.!');
+      err.status = 400;
+      next(err);
+    }
+    res.render('success', {
+      title: 'Success',
+      message: req.body.firstName + ' ' + req.body.lastName + ', you have successful registered to STAT!',
+      path: '//*/'
+    });
   });
+} else {
+  const err = new Error('All fields are required!');
+      err.status = 400;
+      return next(err);
+  }
 });
 
 app.get('/login', (req, res) => {
@@ -73,17 +97,19 @@ app.get('/login', (req, res) => {
 });
 
 // Routes to handle unknwon!
-app.use((req, res, next) => {
+//Unknown routes
+app.use(function(req, res, next) {
   let err = new Error('File Not Found');
   err.status = 404;
   next(err);
-})
+});
 
-// Error handler
-//define last callback
-app.use((req, res) => {
+//Error handler
+app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
+    title: 'Error',
+    path: '//*/',
     message: err.message,
     error: {}
   });
