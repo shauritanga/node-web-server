@@ -55,6 +55,7 @@ app.post('/register', async (req, res, next) => {
     req.body.region &&
     req.body.district &&
     req.body.schoolName &&
+    req.body.phoneNumber &&
     req.body.email) {
       
 
@@ -68,6 +69,7 @@ app.post('/register', async (req, res, next) => {
         region: req.body.region,
         district: req.body.district,
         school: req.body.schoolName,
+        phoneNumber: req.body.phoneNumber,
         email: req.body.email
   });
   user.save(function(err, user){
