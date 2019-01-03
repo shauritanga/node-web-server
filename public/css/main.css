@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box
 }
+body{
+    background: linear-gradient(45deg,rgb(107, 206, 219), rgb(156, 139, 216), rgb(90, 219, 241) );
+}
 .jtron {
     margin-top: 1.4em;
 }
@@ -16,7 +19,8 @@
     margin: 0 auto;
     margin-top: 1.5em;
     padding: 1em;
-    background-color: #ccc;
+    background-color: transparent;
+    opacity: 1;
 }
 .first::first-letter{
     font-size: 2em;
@@ -27,5 +31,10 @@
 .error{
     padding: 1.5em;
     text-align: center;
-    height: 80vh;
+}
+input, select{
+    opacity: 1;
+}
+.vh{
+    height: 100vh;
 }
