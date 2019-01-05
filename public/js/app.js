@@ -22,7 +22,7 @@ const districts = {
     pwani: ['Bagamoyo', 'Kibaha', 'Kisarawe', 'Mafia', 'Mafia Island', 'Mkuranga', 'Rufiji'],
     rukwa: ['Kalambo', 'Nkasi', 'Sumbawanga', 'Sumbawanga Rural'],
     ruvuma: ['Mbinga', 'Namtumbo', 'Songea', 'Songea Rural', 'Tunduru'],
-    tanga: ['Handeni', 'Kilindi', 'Korogwe', 'Lushoto', 'Mkinga', 'Muheza', 'Pangani'],
+    tanga: ['Handeni', 'Kilindi', 'Korogwe', 'Lushoto', 'Mkinga', 'Muheza', 'Pangani', 'Tanga'],
     kusiniUnguja: ['Kati', 'Kusini'],
     songwe: ['Ileje', 'Mbozi', 'Momba' ],
     tabora: ['Igunga', 'Kaliua', 'Nzega', 'Sikonge', 'Tabora', 'Urambo', 'Uyui'],
