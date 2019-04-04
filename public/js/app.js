@@ -17,7 +17,7 @@ const districts = {
     manyara: ['Babati Rural', 'Babati Urban', 'Hanang', 'Kiteto', 'Mbulu', 'Simanjiro'],
     mbeya: ['Chunya', 'kyela', 'Mbarali', 'Mbeya', 'Mbeya rural', 'Rungwe'],
     mara: ['Bunda', 'Butiama', 'Musoma Rural', 'Musoma Urban', 'Rorya', 'Serengeti', 'Tarime'],
-    morogoro: ['Gairo', 'Kilombero', 'Kilosa', 'Morogoro Rural', 'Morogoro Urban', 'Mvomero', 'Ulanga'],
+    morogoro: ['Gairo', 'Kilombero', 'Kilosa', 'Morogoro Rural', 'Morogoro Urban', 'Mvomero', 'Ulanga', 'Malinyi'],
     mwanza: ['Ilemela', 'Kwimba', 'Magu', 'Misungwi', 'Nyamagana', 'Sengerema', 'Ukerewe' ],
     pwani: ['Bagamoyo', 'Kibaha', 'Kisarawe', 'Mafia', 'Mafia Island', 'Mkuranga', 'Rufiji'],
     rukwa: ['Kalambo', 'Nkasi', 'Sumbawanga', 'Sumbawanga Rural'],
