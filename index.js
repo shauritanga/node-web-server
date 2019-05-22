@@ -24,9 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //MIDDLEWARE 3
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const totalUsers = await User.find().estimatedDocumentCount()
   res.render('home', {
     title: 'Home',
+    tatal: totalUsers,
     path: '/'
   });
 });
