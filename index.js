@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
   const totalUsers = await User.find().estimatedDocumentCount()
   res.render('home', {
     title: 'Home',
-    tatal: totalUsers,
+    total: totalUsers,
     path: '/'
   });
 });
