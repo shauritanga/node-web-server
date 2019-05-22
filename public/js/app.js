@@ -15,7 +15,7 @@ const districts = {
     lindi: ['Kilwa', 'Lindi', 'Liwale', 'Nachingwea', 'Ruangwa'],
     mtwara: ['Masasi', 'Mtwara', 'Nanyumbu', 'Newela', 'Tandahimba'],
     manyara: ['Babati Rural', 'Babati Urban', 'Hanang', 'Kiteto', 'Mbulu', 'Simanjiro'],
-    mbeya: ['Chunya', 'kyela', 'Mbarali', 'Mbeya', 'Mbeya rural', 'Rungwe'],
+    mbeya: ['Chunya', 'Kyela', 'Mbarali', 'Mbeya', 'Mbeya rural', 'Rungwe'],
     mara: ['Bunda', 'Butiama', 'Musoma Rural', 'Musoma Urban', 'Rorya', 'Serengeti', 'Tarime'],
     morogoro: ['Gairo', 'Kilombero', 'Kilosa', 'Morogoro Rural', 'Morogoro Urban', 'Mvomero', 'Ulanga', 'Malinyi'],
     mwanza: ['Ilemela', 'Kwimba', 'Magu', 'Misungwi', 'Nyamagana', 'Sengerema', 'Ukerewe' ],
