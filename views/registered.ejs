@@ -1,6 +1,8 @@
 <div class="container">
   <div class="jumbotron jtron">
     <h1>List Of Registered Members</h1>
- 
+     <ol><% users.forEach(function(user) { %>   
+          <li><%= user.firstName %></h4>
+        <% });  %></ol>
   </div>
 </div>
