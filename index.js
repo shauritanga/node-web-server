@@ -34,10 +34,10 @@ app.get('/', async (req, res) => {
 });
 
 
-app.get('/about', (req, res) => {
-  res.render('about', {
-    title: 'About Us',
-    path: '/about'
+app.get('/admin', (req, res) => {
+  res.render('admin', {
+    title: 'Administration',
+    path: '/admin'
   });
 });
 
@@ -93,11 +93,8 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
-app.get('/login', (req, res) => {
-  res.render('login', {
-    title: 'Login',
-    path: '/login'
-  });
+app.post('/login', (req, res) => {
+        console.log('login logics here');
 });
 
 // Routes to handle unknwon!
