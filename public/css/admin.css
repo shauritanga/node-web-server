@@ -1,7 +1,5 @@
 tr, td {
     padding: 0.8em;
-    border: 1px solid #ccc;
-
 }
 
 tr:nth-of-type(odd) {
