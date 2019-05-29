@@ -1,10 +1,10 @@
 <div class="container">
   <div class="jumbotron jtron">
     <h1>List Of Registered Members</h1>
-     <table style="border: 1px solid black; padding: 1px">
+     <table>
         <tr><th>Name of a Teacher</th><tr>
         <% users.forEach(function(user) { %>   
-          <tr><td><%= user.firstName.toUpperCase() %>    <%= user.lastName.toUpperCase() %></td></tr>
+          <tr style="border: 1px solid black; padding: 1px"><td><%= user.firstName.toUpperCase() %>    <%= user.lastName.toUpperCase() %></td></tr>
         <% });  %>
      </table>
   </div>
