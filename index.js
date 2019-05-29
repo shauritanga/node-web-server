@@ -94,7 +94,7 @@ app.post('/register', async (req, res, next) => {
 });
 
 app.post('/login', (req, res) => {
-        console.log('login logics here');
+        User.find({}, {name: 1}).then(user => console.log(user));
 });
 
 // Routes to handle unknwon!
