@@ -93,8 +93,11 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
-app.post('/login', (req, res) => {
-        User.find({}, {name: 1}).then(user => console.log(user));
+app.post('/login', (req, res, next) => {
+        User.find({}, function(err, user) {
+                if(err) return next(err);
+                console.log(user);
+        })
 });
 
 // Routes to handle unknwon!
