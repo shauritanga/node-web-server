@@ -4,8 +4,10 @@
      <table>
         <tr><th>NAME OF A TEACHER</th><th>SCHOOL</th><th>REGION</th><tr>
         <% users.forEach(function(user) { %>   
-          <tr style="border: 1px solid blabk; padding: 10px"><td><%= user.firstName.toUpperCase() %>    <%= user.lastName.toUpperCase() %></td><td><%= user.school.toUpperCase() %></td><td><%= user.region.toUpperCase() %></td></tr>
+          <tr><td><%= user.firstName.toUpperCase() %>    <%= user.lastName.toUpperCase() %></td><td><%= user.school.toUpperCase() %></td><td><%= user.region.toUpperCase() %></td></tr>
         <% });  %>
      </table>
   </div>
 </div>
+</body>
+</html>
