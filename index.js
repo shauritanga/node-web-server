@@ -94,9 +94,11 @@ app.post('/register', async (req, res, next) => {
 });
 
 app.post('/login', (req, res, next) => {
-        User.find({}, 'firstName lastName', function(err, user) {
-                if(err) return next(err);
-                console.log(user);
+        User.find({}, 'firstName lastName', function(err, uses) {
+            if(err) return next(err);
+              res.render('registered', {
+                   data: users
+            });
         })
 });
 
