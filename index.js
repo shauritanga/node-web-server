@@ -97,7 +97,9 @@ app.post('/login', (req, res, next) => {
         User.find({}, 'firstName lastName', function(err, uses) {
             if(err) return next(err);
               res.render('registered', {
-                   data: users
+                   data: users,
+                   title: 'Registered Members',
+                   path:'/registered'
             });
         })
 });
