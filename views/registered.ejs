@@ -1,9 +1,12 @@
 <%- include('./includes/header.ejs') %>
 <div class="container">
   <div class="jumbotron jtron">
-    <h1>Welcome</h1>
-    <p>Una password?.. Acha haraka IT Uchwara analifanyia kazi..........</p>
-    <p></p>
+    <h1>List Of Registered Members</h1>
+    <ol>
+      <% data.map(function(user) { %>
+        <li><%= user.firstName %> <%= user.lastName %>
+      <% })%>
+    </ol>
   </div>
 </div>
 <%- include('./includes/footer.ejs') %>
