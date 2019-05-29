@@ -4,7 +4,7 @@
      <table>
         <tr><th>Name of a Teacher</th><tr>
         <% users.forEach(function(user) { %>   
-          <tr><td><%= user.firstName %>  <%= user.lastName %></td></tr>
+          <tr><td><%= user.firstName.toUpperCase() %>  <%= user.lastName.toUpperCase() %></td></tr>
         <% });  %>
      </table>
   </div>
