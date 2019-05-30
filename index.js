@@ -94,7 +94,7 @@ app.post('/register', async (req, res, next) => {
 });
 
 app.post('/login',  async (req, res, next) => {
-        const users = await  User.find({}, 'firstName lastName region school').sort({fistName: 1})
+        const users = await  User.find({}, 'firstName lastName region school').sort();
 //         User.find({}, 'firstName lastName region school', function(err, users) {
 //                 if(err) return next(err);
 //                 res.render('registered', {
