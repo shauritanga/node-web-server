@@ -93,13 +93,17 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
-app.post('/login', (req, res, next) => {
-        User.find({}, 'firstName lastName region school', function(err, users) {
-                if(err) return next(err);
-                res.render('registered', {
-                        users
-                });
-        });      
+app.post('/login',  async (req, res, next) => {
+        const users = await  User.find({}, 'firstName lastName region school').sort({fistName: 'asc'})
+//         User.find({}, 'firstName lastName region school', function(err, users) {
+//                 if(err) return next(err);
+//                 res.render('registered', {
+//                    users
+//                 });
+//         });  
+         res.render('registered', {
+                 users
+               });
 });
 
 // Routes to handle unknwon!
