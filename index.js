@@ -112,7 +112,7 @@ app.post('/login',  async (req, res, next) => {
                  users
                });
         } else {
-            const err = new Error('Invalid username orpassword');
+            const err = new Error('Invalid username or password');
                 return next(err);
         }
 });
