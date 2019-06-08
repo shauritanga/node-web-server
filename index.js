@@ -95,11 +95,12 @@ app.post('/register', async (req, res, next) => {
 });
 
 app.post('/login',  async (req, res, next) => {
-        if(!req.body.email &&
+        if(!req.body.username &&
            !req.body.password) {
                 const err = new Error('Username and Password are required to login');
                 return next(err);
         }
+        if(req.body.username === admin.username && req.body.password === admin.password) {
         const users = await  User.find({}, 'firstName lastName region school').sort('region');
 //         User.find({}, 'firstName lastName region school', function(err, users) {
 //                 if(err) return next(err);
@@ -110,6 +111,10 @@ app.post('/login',  async (req, res, next) => {
          res.render('registered', {
                  users
                });
+        } else {
+            const err = new Error('Invalid username orpassword');
+                return next(err);
+        }
 });
 
 // Routes to handle unknwon!
