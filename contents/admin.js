@@ -1,6 +1,6 @@
 const admin = {
       username: 'stat.or.tz',
-      password: statortz
+      password: 'statortz'
 }
 
 module.exports = admin;
