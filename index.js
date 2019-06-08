@@ -4,6 +4,7 @@ const fs = require('fs');
 const User = require('./models/users');
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURL;
+const admin = require('./contents/admin');
 
 const app = express();
 
@@ -94,6 +95,11 @@ app.post('/register', async (req, res, next) => {
 });
 
 app.post('/login',  async (req, res, next) => {
+        if(!req.body.email &&
+           !req.body.password) {
+                const err = new Error('Username and Password are required to login');
+                return next(err);
+        }
         const users = await  User.find({}, 'firstName lastName region school').sort('region');
 //         User.find({}, 'firstName lastName region school', function(err, users) {
 //                 if(err) return next(err);
