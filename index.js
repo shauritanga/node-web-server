@@ -101,7 +101,7 @@ app.post('/login',  async (req, res, next) => {
                 return next(err);
         }
         if(req.body.username === admin.username && req.body.password === admin.password) {
-        const users = await  User.find({}, 'firstName lastName region school email').sort('region');
+        const users = await  User.find({}, 'firstName lastName region school email district').sort('region');
 //         User.find({}, 'firstName lastName region school', function(err, users) {
 //                 if(err) return next(err);
 //                 res.render('registered', {
