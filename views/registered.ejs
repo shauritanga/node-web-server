@@ -7,7 +7,7 @@
   <div class="jumbotron jtron">
     <h1>List Of Registered Members</h1>
      <table>
-        <tr><th>NAME OF A TEACHER</th><th>EMAIL</th><th>SCHOOL</th><th>REGION</th><tr>
+        <tr><th>NAME OF A TEACHER</th><th>EMAIL</th><th>SCHOOL</th>><th>DISTRICT</th><th>REGION</th><tr>
         <% users.forEach(function(user) { %>
           <tr><td><%= user.firstName.toUpperCase() %>    <%= user.lastName.toUpperCase() %></td><td><%= user.email %></td><td><%= user.school.toUpperCase() %></td><td><%= user.district.toUpperCase() %></td><td><%= user.region.toUpperCase() %></td></tr>
         <% });  %>
