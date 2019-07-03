@@ -102,7 +102,10 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-        res.send('login success');
+        res.render('/profile', {
+                title: 'User Profile',
+                path: ''
+        });
 });
 
 app.post('/admin',  async (req, res, next) => {
