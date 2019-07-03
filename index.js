@@ -112,10 +112,32 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-        res.render('profile', {
-                title: 'User Profile',
-                path: ''
-        });
+        /* ====================== USER PROFILE ==============*/
+        f(!req.body.username || !req.body.password) {
+        const err = new Error('Fill both username and password');
+        res.statusCode = 400;
+        return next(err);
+    }
+    User.findOne({$or:[{email: req.body.username}, {username: req.body.username}]}, (err, user) => {
+        if(err) {
+            const err = new Error('Invalid username');
+            res.statusCode = 400;
+            return next(err);
+        }
+        bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
+            if(err) {
+                return next(err);
+            }
+            if(!isMatch) {
+                const err = new Error('Wrong password, try again with the correct one');
+                res.statusCode = 400;
+                return next(err);
+            }
+            req.session.username = user.username;
+            return res.redirect('/profile');
+        })
+    });
+        /* =================== END USER PROFILE =============*/
 });
 
 app.post('/admin',  async (req, res, next) => {
