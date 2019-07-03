@@ -112,8 +112,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-        /* ====================== USER PROFILE ==============*/
-        f(!req.body.username || !req.body.password) {
+        if(!req.body.username || !req.body.password) {
         const err = new Error('Fill both username and password');
         res.statusCode = 400;
         return next(err);
@@ -124,20 +123,12 @@ app.post('/login', (req, res) => {
             res.statusCode = 400;
             return next(err);
         }
-        bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
-            if(err) {
-                return next(err);
-            }
-            if(!isMatch) {
-                const err = new Error('Wrong password, try again with the correct one');
-                res.statusCode = 400;
-                return next(err);
-            }
             req.session.username = user.username;
-            return res.redirect('/profile');
-        })
-    });
-        /* =================== END USER PROFILE =============*/
+            return res.render('profile', {
+                    title: 'User Profile',
+                    user: user
+            });
+     });
 });
 
 app.post('/admin',  async (req, res, next) => {
