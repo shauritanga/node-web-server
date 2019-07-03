@@ -94,7 +94,7 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
-app.post('/login',  async (req, res, next) => {
+app.post('/admin',  async (req, res, next) => {
         if(!req.body.username &&
            !req.body.password) {
                 const err = new Error('Username and Password are required to login');
@@ -102,12 +102,6 @@ app.post('/login',  async (req, res, next) => {
         }
         if(req.body.username === admin.username && req.body.password === admin.password) {
         const users = await  User.find({}, 'firstName lastName region school email district phoneNumber').sort('region');
-//         User.find({}, 'firstName lastName region school', function(err, users) {
-//                 if(err) return next(err);
-//                 res.render('registered', {
-//                    users
-//                 });
-//         });  
          res.render('registered', {
                  users
                });
