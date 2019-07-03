@@ -102,7 +102,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-        res.render('/profile', {
+        res.render('profile', {
                 title: 'User Profile',
                 path: ''
         });
