@@ -94,6 +94,17 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
+app.get('/login', (req, res) => {
+        res.render('login',{
+                title: 'Login',
+                path: '/login'
+        });
+});
+
+app.post('/login', (req, res) => {
+        res.send('login success');
+});
+
 app.post('/admin',  async (req, res, next) => {
         if(!req.body.username &&
            !req.body.password) {
