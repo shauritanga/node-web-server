@@ -3,11 +3,12 @@
         <div class="user-page">
             <div class="user-page__picture">
                 <a href="/edit">
-                <img src="/images/profile/<%%>" alt="user profile picture">
+                <img src="/images/profile/<%= user.image %>" alt="user profile picture">
                 </a>
             </div>
             <div class="user-page__information">
-                <h4>Name: <%%></h4>
+                <h4>Name: <%= user.firstMane %> <%= user.lastName%></h4>
+                
             </div>
         </div>
     </div>
