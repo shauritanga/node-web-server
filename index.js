@@ -140,7 +140,6 @@ app.post('/login', (req, res, next) => {
       res.statusCode = 400;
       return next(err)
     }
-    console.log(user);
     res.render('profile', {
       title:'User Profile',
       user: user,

@@ -36,8 +36,6 @@ const districts = {
     kaskaziniUnguja: ['Kaskazini A', 'Kaskazini B'],
 
 }
-console.log(Object.keys(districts));
-// Event Listerner to Region
 region.addEventListener('change', function(e) {
     if(this.value === 'Dar es salaam') {
         var str = ""
