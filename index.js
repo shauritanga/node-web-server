@@ -98,8 +98,26 @@ app.post('/register', async (req, res, next) => {
 
 app.get('/login', (req, res) => {
         res.render('login',{
-                title: 'Login',
-                path: '/login'
+            title: 'Login',
+            path: '/login'
+        });
+});
+
+app.post('/login', (req, res) => {
+        User.findOne({email: req.body.email}, (err, user) => {
+            if(err) {
+               return next(err);
+            }
+            if(!user) {
+               const err = new Error('No user with that email,please check your email and try again');
+               res.statusCode = 400;
+               return next(err);
+            }
+             res.render('profile', {
+                 title: 'User Profile',
+                 user: user,
+                 path: ''
+             });
         });
 });
 
