@@ -18,16 +18,10 @@ mongoose.connect(db, {useNewUrlParser: true})
 
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views');
 
-// app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(session({
-//     secret: "athanas love coding",
-//     saveUninitialized: false
-// }))
 
 // MIDDLEWARE 2
 //MIDDLEWARE 3
