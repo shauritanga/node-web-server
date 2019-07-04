@@ -38,3 +38,76 @@ input, select{
 .vh{
     height: 100vh;
 }
+.user-page {
+    margin: 1rem auto;
+    display: flex;
+    width: 89%;
+    height: 100vh;
+}
+ .user-page__picture {
+     width: 20%;
+     margin-right: 7px;
+}
+.user-page__picture img{
+    width: 100%;
+    border-radius: 25%;
+}
+.user-page__information{
+    width: 75%;
+    background: #fff;
+    padding: 2rem;
+}
+
+
+/* login form */
+.form-wrapper {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-form{
+    width: 400px;
+    margin: 0 auto;
+}
+.welcome-form input{
+    width: 100%;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+}
+.welcome-form input[type="submit"]{
+    background: rgb(29, 22, 119);
+    color: aliceblue;
+    font-weight: bolder;
+}
+.welcome-form input[type="file"]{
+    display: inline-block;
+    width: 70%;
+}
+.welcome-form form{
+    background: #ccc;
+    padding: 2rem;
+}
+.welcome-form form > h4{
+    border-bottom: 0.5rem;
+    padding: 0.3rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: blue;
+}
+.welcome-form form > p{
+    padding: 0.3rem;
+}
+.welcome-form form > p a{
+    text-decoration: none;
+}
+.user-page__information tr:nth-child(odd) {
+    padding: 0.2rem;
+    background: #ccc;
+}
+.user-page__information td {
+    padding: 0.5rem;
+}

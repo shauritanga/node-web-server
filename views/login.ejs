@@ -1,16 +1,16 @@
 <%- include('./includes/header.ejs') %>
   <!-- Main Content -->
-  <div class="container vh">
-    <div class="jumbotron jtron">
-      <form action ='/login' method = 'post'>
-      <lable for="username">Username:</lable>
-      <input type='text' id="username" name='username' />
-      <lable for="password">Password:</lable>
-      <input type='password' id="password" name='password' />
-      <input type='submit' value='login' />
+  <div class="form-wrapper">
+    <div class="welcome-form">
+      <form action="/login" method="POST">
+          <h4>Please login</h4>
+          <input type="text" name="username" id="username" placeholder="Type  your email or username">
+          <input type="password" name="password" id="passowrd" placeholder="Type your password">
+          <input type="submit" value="Login">
+          <p>Don't have an account? <a href="/register">Signup</a></p>
       </form>
-    </div>
   </div>
+</div>
   
  <!--Footer Here  -->
 <%- include('./includes/footer.ejs') %>

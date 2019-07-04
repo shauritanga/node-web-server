@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const User = require('./models/users');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
+const session = require('express-session');
 const db = require('./config/keys').mongoURL;
 const admin = require('./contents/admin');
 const port = process.env.PORT || 3000;
@@ -18,15 +20,21 @@ mongoose.connect(db, {useNewUrlParser: true})
 
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
 
-app.use(express.json());
+app.use(fileUpload());
+app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: "athanas love coding",
+  saveUninitialized: false
+}))
 
-// MIDDLEWARE 2
-//MIDDLEWARE 3
-
-
+/*====================================================================
+        HOME ROUTE
+  =====================================================================
+ */
 app.get('/', async (req, res) => {
   const totalUsers = await User.find().estimatedDocumentCount()
   res.render('home', {
@@ -37,6 +45,10 @@ app.get('/', async (req, res) => {
 });
 
 
+/*====================================================================
+        GET ADMIN ROUTE
+  =====================================================================
+ */
 app.get('/admin', (req, res) => {
   res.render('admin', {
     title: 'Administration',
@@ -44,6 +56,10 @@ app.get('/admin', (req, res) => {
   });
 });
 
+/*====================================================================
+        GET REGISTER ROUTE
+  =====================================================================
+ */
 app.get('/register', (req, res) => {
   res.render('register', {
     title: 'Sign Up',
@@ -51,6 +67,10 @@ app.get('/register', (req, res) => {
   })
 });
 
+/*====================================================================
+        POST REGISTER ROUTE
+  =====================================================================
+ */
 app.post('/register', async (req, res, next) => {
   if(req.body.firstName &&
     req.body.lastName &&
@@ -63,8 +83,6 @@ app.post('/register', async (req, res, next) => {
     req.body.phoneNumber &&
     req.body.email) {
       
-
-     // creating user
     const user = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -96,30 +114,40 @@ app.post('/register', async (req, res, next) => {
   }
 });
 
+/*====================================================================
+        GET USER LOGIN ROUTE
+  =====================================================================
+ */
 app.get('/login', (req, res) => {
-        res.render('login',{
-            title: 'Login',
-            path: '/login'
-        });
+  res.render('login', {
+    title: 'User Login',
+    path: '/'
+  });
 });
 
-app.post('/login', (req, res) => {
-        User.find({email: req.body.email}, (err, user) => {
-            if(err) {
-               return next(err);
-            }
-            if(!user) {
-               const err = new Error('No user with that email,please check your email and try again');
-               res.statusCode = 400;
-               return next(err);
-            }
-             res.render('profile', {
-                 title: 'User Profile',
-                 user: user,
-                 path: ''
-             });
-        });
-});
+
+/*====================================================================
+        POST USER LOGIN ROUTE
+  =====================================================================
+ */
+app.post('/login', (req, res, next) => {
+  User.findOne({email: req.body.username}, (err, user) => {
+    if(err) {
+      return next(err);
+    }
+    if(!user) {
+      const err = new Error(`No any record found registered with your email`);
+      res.statusCode = 400;
+      return next(err)
+    }
+    console.log(user);
+    res.render('profile', {
+      title:'User Profile',
+      user: user,
+      path: ''
+    })
+  })
+})
 
 app.post('/admin',  async (req, res, next) => {
         if(!req.body.username &&
@@ -158,5 +186,5 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port, () => {
-  console.log(`Our app is running on port ${port}`);
+  console.log(`server is running on ${port} port`);
 });

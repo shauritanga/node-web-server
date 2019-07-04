@@ -15,7 +15,7 @@ module.exports = mongoose.model('User', {
     },
     image: {
         type: String,
-        default: 'holder.png'
+        default: 'holder.jpg'
     },
     idNumber: {
         type: String,
