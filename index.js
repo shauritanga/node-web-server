@@ -94,7 +94,7 @@ app.post('/register', async (req, res, next) => {
     res.render('success', {
       title: 'Success',
       message: req.body.firstName + ' ' + req.body.lastName + ', you have successful registered to STAT!',
-      path: '//*/'
+      path: '/'
     });
   });
 } else {
@@ -117,19 +117,7 @@ app.post('/login', (req, res) => {
         res.statusCode = 400;
         return next(err);
     }
-    User.findOne({$or:[{email: req.body.username}, {username: req.body.username}]}, (err, user) => {
-        if(err) {
-            const err = new Error('Invalid username');
-            res.statusCode = 400;
-            return next(err);
-        }
-            req.session.username = user.username;
-            return res.render('profile', {
-                    title: 'User Profile',
-                    user: user
-            });
-     });
-});
+    res.redirect('/');
 
 app.post('/admin',  async (req, res, next) => {
         if(!req.body.username &&
