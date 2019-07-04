@@ -39,10 +39,9 @@ input, select{
     height: 100vh;
 }
 .user-page {
-    margin: 1rem auto;
+    margin: 2rem auto;
     display: flex;
     width: 89%;
-    height: 100vh;
 }
  .user-page__picture {
      width: 20%;
@@ -117,6 +116,7 @@ input, select{
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: auto;
     }
     .user-page__picture{
         padding: 0.5rem;
