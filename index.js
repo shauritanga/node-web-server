@@ -3,8 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const User = require('./models/users');
 const mongoose = require('mongoose');
-const session = require('express-session');
-const fileUpload = require('express-fileupload');
 const db = require('./config/keys').mongoURL;
 const admin = require('./contents/admin');
 const port = process.env.PORT || 3000;
@@ -22,14 +20,14 @@ mongoose.connect(db, {useNewUrlParser: true})
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views');
 
-app.use(fileUpload());
+// app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-    secret: "athanas love coding",
-    saveUninitialized: false
-}))
+// app.use(session({
+//     secret: "athanas love coding",
+//     saveUninitialized: false
+// }))
 
 // MIDDLEWARE 2
 //MIDDLEWARE 3
@@ -110,14 +108,6 @@ app.get('/login', (req, res) => {
                 path: '/login'
         });
 });
-
-app.post('/login', (req, res) => {
-        if(!req.body.username || !req.body.password) {
-        const err = new Error('Fill both username and password');
-        res.statusCode = 400;
-        return next(err);
-    }
-    res.redirect('/');
 
 app.post('/admin',  async (req, res, next) => {
         if(!req.body.username &&
