@@ -104,7 +104,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-        User.findOne({email: req.body.email}, (err, user) => {
+        User.find({email: req.body.email}, (err, user) => {
             if(err) {
                return next(err);
             }
