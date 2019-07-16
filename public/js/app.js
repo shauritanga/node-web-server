@@ -10,7 +10,7 @@ const districts = {
     getai:['Bukombe', 'Chato', 'Geita', 'Mbogwe', 'Nyang\'hwale'],
     kagera: ['Biharamulo', 'Bukoba Rural', 'Bukoba Urban', 'Karagwe', 'Kyerwa', 'Missenyi', 'Muleba', 'Ngara'],
     katavi: ['Mlele', 'Mpanda', 'Tanganyika'],
-    kigoma:['Buhigwe', 'Kakonko', 'Kasulu', 'Kibondo'],
+    kigoma:['Buhigwe', 'Kakonko', 'Kasulu Rural','Kasulu Urban', 'Kigoma Rural', 'Kigoma Urban', 'Kibondo', 'Uvinza'],
     kilimanjaro: ['Hai', 'Moshi', 'Mwanga', 'Rombo', 'Same', 'Siha'],
     lindi: ['Kilwa', 'Lindi', 'Liwale', 'Nachingwea', 'Ruangwa'],
     mtwara: ['Masasi', 'Mtwara', 'Nanyumbu', 'Newela', 'Tandahimba'],
